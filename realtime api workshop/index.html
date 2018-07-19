@@ -140,7 +140,7 @@
                         var name = message.message.CALL_EVENT["name"];
                         var relatedDeviceEvent = message.message.CALL_EVENT["relatedDeviceEvent"];
                         var userAction = message.message.CALL_EVENT["userAction"];
-                        if (relatedDeviceEvent == null) relatedDeviceEvent = "no device event" 
+                        if (relatedDeviceEvent == "" || relatedDeviceEvent == null) relatedDeviceEvent = "no device event" 
                         if (name == "inProgress") {
                             appendStreamingAPILog("call in progress");
                             var indicatorLight = document.getElementById("callLight");
