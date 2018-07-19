@@ -138,16 +138,22 @@
                     }
                     else if (message.message.eventType == "CALL_EVENT") {
                         var name = message.message.CALL_EVENT["name"];
+                        var relatedDeviceEvent = message.message.CALL_EVENT["relatedDeviceEvent"];
+                        var userAction = message.message.CALL_EVENT["userAction"];
                         if (name == "inProgress") {
                             appendStreamingAPILog("call in progress");
                             var indicatorLight = document.getElementById("callLight");
                             indicatorLight.style.backgroundColor = "red";
+                            appendStreamingAPILog("<b>&gt;&gt; Device Event is </b>" + relatedDeviceEvent);
+                            appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);
                         }
                         else {
                             var indicatorLight = document.getElementById("callLight");
                             indicatorLight.style.backgroundColor = "lightgreen";
                             indicatorLight = document.getElementById("crossTalkLight");
-                            indicatorLight.style.backgroundColor = "lightgreen";                            
+                            indicatorLight.style.backgroundColor = "lightgreen"; 
+                            appendStreamingAPILog("<b>&gt;&gt; Device Event is </b>" + relatedDeviceEvent);
+                            appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
                         }
                     }
                 }
