@@ -140,14 +140,15 @@
                         var name = message.message.CALL_EVENT["name"];
                         var relatedDeviceEvent = message.message.CALL_EVENT["relatedDeviceEvent"];
                         var userAction = message.message.CALL_EVENT["userAction"];
+                          
                         if (name == "inProgress") {
                             appendStreamingAPILog("call in progress");
                             var indicatorLight = document.getElementById("callLight");
                             indicatorLight.style.backgroundColor = "red";
                             if (relatedDeviceEvent == "" || relatedDeviceEvent == null)
-                            	appendStreamingAPILog("<b>&gt;&gt; No device event </b>");
+                            	appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>");
                             else
-                            	appendStreamingAPILog("<b>&gt;&gt; Device Event is </b>" + relatedDeviceEvent);
+                            	appendStreamingAPILog("<b>&gt;&gt; Call was answered using the headset button </b>");
                             appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);
                         }
                         else {
@@ -156,9 +157,9 @@
                             indicatorLight = document.getElementById("crossTalkLight");
                             indicatorLight.style.backgroundColor = "lightgreen"; 
                             if (relatedDeviceEvent == "" || relatedDeviceEvent == null)
-                            	appendStreamingAPILog("<b>&gt;&gt; No device event </b>");
+                            	appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>");
                             else
-                            	appendStreamingAPILog("<b>&gt;&gt; Device Event is </b>" + relatedDeviceEvent);
+                            	appendStreamingAPILog("<b>&gt;&gt; Call was disconnected using the headset button </b>");
                             appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
                         }
                     }
