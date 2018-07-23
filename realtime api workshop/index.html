@@ -155,7 +155,10 @@
                             indicatorLight.style.backgroundColor = "lightgreen";
                             indicatorLight = document.getElementById("crossTalkLight");
                             indicatorLight.style.backgroundColor = "lightgreen"; 
-                            appendStreamingAPILog("<b>&gt;&gt; Device Event is </b>" + relatedDeviceEvent);
+                            if (relatedDeviceEvent == "" || relatedDeviceEvent == null)
+                            	appendStreamingAPILog("<b>&gt;&gt; No device event </b>");
+                            else
+                            	appendStreamingAPILog("<b>&gt;&gt; Device Event is </b>" + relatedDeviceEvent);
                             appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
                         }
                     }
