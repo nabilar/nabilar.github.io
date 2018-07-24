@@ -126,7 +126,7 @@
                         var overTalk = message.message.CD_EVENT["overTalk"];
                         if (overTalk > 0) {
                             appendStreamingAPILog("overTalk = " + message.message.CD_EVENT["overTalk"]);
-                            if (overTalk > 200) {
+                            if (overTalk > 900) {
                                 var indicatorLight = document.getElementById("crossTalkLight");
                                 indicatorLight.style.backgroundColor = "red";
                             }
