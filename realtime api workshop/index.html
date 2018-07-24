@@ -153,8 +153,8 @@
                             else{
                             	appendStreamingAPILog("<b>&gt;&gt; Call was answered using the headset button. Device Id : </b>" + message.message.deviceId);   	
                             }
-                            appendStreamingAPILog("<b>&gt;&gt; JSON payload received : </b>");
-                    		appendStreamingAPILog(message.message);  
+                            //appendStreamingAPILog("<b>&gt;&gt; JSON payload received : </b>");
+                    		//appendStreamingAPILog(message.message);  
                         }
                         else {
                             var indicatorLight = document.getElementById("callLight");
@@ -169,8 +169,8 @@
                             	appendStreamingAPILog("<b>&gt;&gt; Call was disconnected using the headset button. Device Id : </b>" + message.message.deviceId);
                             	//appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
                         	}
-                        	appendStreamingAPILog("<b>&gt;&gt; JSON payload received : </b>");
-                    		appendStreamingAPILog(JSON.stringify(message.message));  
+                        	//appendStreamingAPILog("<b>&gt;&gt; JSON payload received : </b>");
+                    		//appendStreamingAPILog(JSON.stringify(message.message));  
                         }
                     }
                 }
