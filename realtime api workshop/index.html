@@ -145,22 +145,27 @@
                             appendStreamingAPILog("call in progress");
                             var indicatorLight = document.getElementById("callLight");
                             indicatorLight.style.backgroundColor = "red";
-                            if (relatedDeviceEvent == "" || relatedDeviceEvent == null)
+                            if (relatedDeviceEvent == "" || relatedDeviceEvent == null){
                             	appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>");
-                            else
-                            	appendStreamingAPILog("<b>&gt;&gt; Call was answered using the headset button </b>");
-                            appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);
+                            	appendStreamingAPILog("<b>&gt;&gt; The call was answered from the softphone </b>");
+                            }
+                            else{
+                            	appendStreamingAPILog("<b>&gt;&gt; Call was answered using the headset button </b>");   	
+                            }
+                            //appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);
                         }
                         else {
                             var indicatorLight = document.getElementById("callLight");
                             indicatorLight.style.backgroundColor = "lightgreen";
                             indicatorLight = document.getElementById("crossTalkLight");
                             indicatorLight.style.backgroundColor = "lightgreen"; 
-                            if (relatedDeviceEvent == "" || relatedDeviceEvent == null)
+                            if (relatedDeviceEvent == "" || relatedDeviceEvent == null){
                             	appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>");
+                            	appendStreamingAPILog("<b>&gt;&gt; The call was ended from the softphone </b>"); 
+                            }
                             else
                             	appendStreamingAPILog("<b>&gt;&gt; Call was disconnected using the headset button </b>");
-                            appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
+                            //appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
                         }
                     }
                 }
