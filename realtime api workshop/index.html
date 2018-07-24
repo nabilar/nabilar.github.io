@@ -121,7 +121,7 @@
                     var indicatorLight = document.getElementById("qdLight");
                     indicatorLight.style.backgroundColor = "red";
                 } else {
-                    appendStreamingAPILog("<b>&gt;&gt; " + message.message.eventType + "</b>");
+                    //appendStreamingAPILog("<b>&gt;&gt; " + message.message.eventType + "</b>");
                     if (message.message.eventType == "CD_EVENT") {
                         var overTalk = message.message.CD_EVENT["overTalk"];
                         if (overTalk > 0) {
