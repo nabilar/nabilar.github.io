@@ -79,7 +79,7 @@
 
                     if (deviceIdFilter != "" && deviceIdFilter != "[choose a device id to filter on]") {
                         if (deviceIdFilter.includes(message.message.deviceId)) {
-                            appendStreamingAPILog("&gt;&gt; New realtime Message from my device! (" + message.message.deviceId + ")");
+                            //appendStreamingAPILog("&gt;&gt; New realtime Message from my device! (" + message.message.deviceId + ")");
                             processRealtimeMessage(message);
                         } else {
                             // commenting out intentionally, so as not to spam user with everyone elses messages
@@ -146,13 +146,12 @@
                             var indicatorLight = document.getElementById("callLight");
                             indicatorLight.style.backgroundColor = "red";
                             if (relatedDeviceEvent == "" || relatedDeviceEvent == null){
-                            	appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>");
+                            	//appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>" + message.message.deviceId);
                             	appendStreamingAPILog("<b>&gt;&gt; The call was answered from the softphone </b>");
                             }
                             else{
                             	appendStreamingAPILog("<b>&gt;&gt; Call was answered using the headset button </b>");   	
                             }
-                            //appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);
                         }
                         else {
                             var indicatorLight = document.getElementById("callLight");
@@ -160,14 +159,16 @@
                             indicatorLight = document.getElementById("crossTalkLight");
                             indicatorLight.style.backgroundColor = "lightgreen"; 
                             if (relatedDeviceEvent == "" || relatedDeviceEvent == null){
-                            	appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>");
+                            	//appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>" + message.message.deviceId);
                             	appendStreamingAPILog("<b>&gt;&gt; The call was ended from the softphone </b>"); 
                             }
                             else
                             	appendStreamingAPILog("<b>&gt;&gt; Call was disconnected using the headset button </b>");
-                            //appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
+                            	//appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
                         }
                     }
+                    appendStreamingAPILog("<b>&gt;&gt; JSON payload received : </b>" + message.message.deviceId);
+                    appendStreamingAPILog(message.message.deviceId);  
                 }
             }
 
