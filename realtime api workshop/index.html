@@ -137,6 +137,7 @@
                         }
                     }
                     else if (message.message.eventType == "CALL_EVENT") {
+                    	appendStreamingAPILog("<b>&gt;&gt; " + message.message.eventType + "</b>");
                         var name = message.message.CALL_EVENT["name"];
                         var relatedDeviceEvent = message.message.CALL_EVENT["relatedDeviceEvent"];
                         var userAction = message.message.CALL_EVENT["userAction"];
@@ -150,8 +151,10 @@
                             	appendStreamingAPILog("<b>&gt;&gt; The call was answered from the softphone </b>");
                             }
                             else{
-                            	appendStreamingAPILog("<b>&gt;&gt; Call was answered using the headset button </b>");   	
+                            	appendStreamingAPILog("<b>&gt;&gt; Call was answered using the headset button. Device Id : </b>" + message.message.deviceId);   	
                             }
+                            appendStreamingAPILog("<b>&gt;&gt; JSON payload received : </b>");
+                    		appendStreamingAPILog(message.message);  
                         }
                         else {
                             var indicatorLight = document.getElementById("callLight");
@@ -162,13 +165,14 @@
                             	//appendStreamingAPILog("<b>&gt;&gt; There was no event from the device </b>" + message.message.deviceId);
                             	appendStreamingAPILog("<b>&gt;&gt; The call was ended from the softphone </b>"); 
                             }
-                            else
-                            	appendStreamingAPILog("<b>&gt;&gt; Call was disconnected using the headset button </b>");
+                            else{
+                            	appendStreamingAPILog("<b>&gt;&gt; Call was disconnected using the headset button. Device Id : </b>" + message.message.deviceId);
                             	//appendStreamingAPILog("<b>&gt;&gt; User Action is </b>" + userAction);                           
+                        	}
+                        	appendStreamingAPILog("<b>&gt;&gt; JSON payload received : </b>");
+                    		appendStreamingAPILog(JSON.stringify(message.message));  
                         }
                     }
-                    appendStreamingAPILog("<b>&gt;&gt; JSON payload received : </b>");
-                    appendStreamingAPILog(message.message);  
                 }
             }
 
