@@ -105,6 +105,7 @@
             });
 
             function processRealtimeMessage(message) {
+            	console.log("message: " + JSON.stringify(message));
                 if (message.message.eventType == 'HS_STATE_CHANGE_MUTE_ON') {
                     appendStreamingAPILog("<b>&gt;&gt; Mute</b>");
                     var indicatorLight = document.getElementById("muteLight");
