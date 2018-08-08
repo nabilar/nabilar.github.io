@@ -73,6 +73,7 @@
                     }
                 },
                 message: function (message) {
+                	console.log("message: " + JSON.stringify(message));
                     var deviceIdFilter = document.getElementById("deviceIdSelect").value;
 
                     addToFilterIfNotExist(message.message.deviceId);
@@ -105,7 +106,7 @@
             });
 
             function processRealtimeMessage(message) {
-            	console.log("message: " + JSON.stringify(message));
+            	console.log("processRealtimeMessage: " + JSON.stringify(message));
                 if (message.message.eventType == 'HS_STATE_CHANGE_MUTE_ON') {
                     appendStreamingAPILog("<b>&gt;&gt; Mute</b>");
                     var indicatorLight = document.getElementById("muteLight");
