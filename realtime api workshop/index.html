@@ -84,6 +84,7 @@
                         } else {
                             // commenting out intentionally, so as not to spam user with everyone elses messages
                             //appendStreamingAPILog("&gt;&gt; New realtime Message NOT from my device! Ignoring. (From: " + message.message.deviceId + ", My device = " + deviceIdFilter + ")");
+                        	processRealtimeMessage(message);
                         }
                     } else {
                         appendStreamingAPILog("&gt;&gt; No device filter selected. Ignoring message.");
