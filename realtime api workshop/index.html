@@ -128,16 +128,16 @@
                 } else {
                     //appendStreamingAPILog("<b>&gt;&gt; " + message.message.eventType + "</b>");
                     if (message.message.eventType == "CD_EVENT") {
-                        var overTalk = message.message.CD_EVENT["overTalk"];
+                        var overTalk = message.message.overTalk;
                         //txLevelOut    txNoiseIn    farTalk    nearTalk    overTalk
-                        var txLevelOut = message.message.CD_EVENT["txLevelOut"];
-                        var txNoiseIn = message.message.CD_EVENT["txNoiseIn"];
-                       	var farTalk = message.message.CD_EVENT["farTalk"];
-                        var nearTalk = message.message.CD_EVENT["nearTalk"];
+                        var txLevelOut = message.message.CD_EVENT.txLevelOut;
+                        var txNoiseIn = message.message.CD_EVENT.txNoiseIn;
+                       	var farTalk = message.message.CD_EVENT.farTalk;
+                        var nearTalk = message.message.CD_EVENT.nearTalk;
                         
                         callSageMakerEndpoint(txLevelOut,    txNoiseIn,    farTalk,    nearTalk,    overTalk);
                         if (overTalk > 0) {
-                            appendStreamingAPILog("overTalk = " + message.message.CD_EVENT["overTalk"]);
+                            appendStreamingAPILog("overTalk = " + message.message.overTalk);
                             if (overTalk > 900) {
                                 var indicatorLight = document.getElementById("crossTalkLight");
                                 indicatorLight.style.backgroundColor = "red";
