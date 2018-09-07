@@ -88,6 +88,8 @@
                         }
                     } else {
                         appendStreamingAPILog("&gt;&gt; No device filter selected. Ignoring message.");
+                        // simulator test
+                        processRealtimeMessage(message);
                     }
                 },
                 presence: function (presenceEvent) {
