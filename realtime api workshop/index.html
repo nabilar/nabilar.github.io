@@ -130,10 +130,10 @@
                     if (message.message.eventType == "CD_EVENT") {
                         var overTalk = message.message.overTalk;
                         //txLevelOut    txNoiseIn    farTalk    nearTalk    overTalk
-                        var txLevelOut = message.message.CD_EVENT.txLevelOut;
-                        var txNoiseIn = message.message.CD_EVENT.txNoiseIn;
-                       	var farTalk = message.message.CD_EVENT.farTalk;
-                        var nearTalk = message.message.CD_EVENT.nearTalk;
+                        var txLevelOut = message.message.txLevelOut;
+                        var txNoiseIn = message.message.txNoiseIn;
+                       	var farTalk = message.message.farTalk;
+                        var nearTalk = message.message.nearTalk;
                         
                         callSageMakerEndpoint(txLevelOut,    txNoiseIn,    farTalk,    nearTalk,    overTalk);
                         if (overTalk > 0) {
