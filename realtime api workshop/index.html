@@ -127,6 +127,13 @@
                     //appendStreamingAPILog("<b>&gt;&gt; " + message.message.eventType + "</b>");
                     if (message.message.eventType == "CD_EVENT") {
                         var overTalk = message.message.CD_EVENT["overTalk"];
+                        //txLevelOut    txNoiseIn    farTalk    nearTalk    overTalk
+                        var txLevelOut = message.message.CD_EVENT["txLevelOut"];
+                        var txNoiseIn = message.message.CD_EVENT["txNoiseIn"];
+                       	var farTalk = message.message.CD_EVENT["farTalk"];
+                        var nearTalk = message.message.CD_EVENT["nearTalk"];
+                        
+                        callSageMakerEndpoint(txLevelOut,    txNoiseIn,    farTalk,    nearTalk,    overTalk);
                         if (overTalk > 0) {
                             appendStreamingAPILog("overTalk = " + message.message.CD_EVENT["overTalk"]);
                             if (overTalk > 900) {
@@ -262,6 +269,41 @@
                     }
                 });
                 return retval;
+            }
+            
+            function callSageMakerEndpoint(v1, v2, v3, v4 ,v5){
+				
+				var params = 'param1='+v1+'&param2='+v2+'&param3='+v3+'&param4='+v4+'&param5='+v5;
+				
+				$.ajax({
+					url: "https://ovnj221ut5.execute-api.us-east-1.amazonaws.com/test?"+params, 
+					type: 'GET',
+					//headers: headers, 
+					//data: {test: 'test'},
+					statusCode: {
+						200: function (response) {
+							console.log("Success: 200");
+							},
+						201: function (response) {
+							console.log("Status code : 201");
+							},
+						400: function (response) {
+							console.log("Status code : 400");
+							},
+						404: function (response) {
+							console.log("Status code : 404");
+							}
+						},
+					  success: function (response) {
+						console.log('success');
+						console.log(JSON.stringify(response));
+						appendStreamingAPILog(JSON.stringify(response));		  	
+					  },
+					  error: function (response) {
+						console.log(JSON.stringify(response));
+					  },
+					cache: false
+				});
             }
         </script>
     </font>
