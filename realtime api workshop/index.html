@@ -21,49 +21,52 @@
                 <a href="http://developer.plantronics.com/article/ingesting-consuming-streaming-data" target="_blank">See guidance here.</a>
             </li>
         </ul>
+		<div style="width: 100%; overflow: hidden;">
+			<div style="width: 600px; float: left;">
+				<table border="1">
+					<tr>
+						<td valign="top" colspan="5">
+							<b>Device ID filter:</b>
+							<br />
+							<select id="deviceIdSelect">
+								<option value="[choose a device id to filter on]">[choose a device id to filter on]</option>
+								<option value="[Simulator data]">[Simulator data]</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td width="80" align="center" id="muteLight" height="25" bgcolor="lightgreen">
+							<b>Mute</b>
+						</td>
+						<td width="80" align="center" id="qdLight" height="25" bgcolor="lightgreen">
+							<b>QD</b>
+						</td>
+						<td width="80" align="center" id="callLight" height="25" bgcolor="lightgreen">
+							<b>On Call</b>
+						</td>
+						<td width="80" align="center" id="crossTalkLight" height="25" bgcolor="lightgreen">
+							<b>Crosstalk</b>
+						</td>
+						<td></td>
+					</tr>
+				</table>
 
-        <table border="1">
-            <tr>
-                <td valign="top" colspan="5">
-                    <b>Device ID filter:</b>
-                    <br />
-                    <select id="deviceIdSelect">
-                        <option value="[choose a device id to filter on]">[choose a device id to filter on]</option>
-                        <option value="[Simulator data]">[Simulator data]</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td width="80" align="center" id="muteLight" height="25" bgcolor="lightgreen">
-                    <b>Mute</b>
-                </td>
-                <td width="80" align="center" id="qdLight" height="25" bgcolor="lightgreen">
-                    <b>QD</b>
-                </td>
-                <td width="80" align="center" id="callLight" height="25" bgcolor="lightgreen">
-                    <b>On Call</b>
-                </td>
-                <td width="80" align="center" id="crossTalkLight" height="25" bgcolor="lightgreen">
-                    <b>Crosstalk</b>
-                </td>
-                <td></td>
-            </tr>
-        </table>
+				<br />
 
-        <br />
-
-        <table border="1">
-            <tr>
-                <td valign="top">
-                    <b>Plantronics Streaming API Log (newest first):</b>
-                    <button id="clear_streamingapi_log">Clear</button>
-                    <div id="streamingapilog"></div>
-                </td>
-            </tr>
-        </table>
-        <br/>
-        <br/>
-        <div id="chart_container" style="min-width: 310px; height: 600px; max-width: 600px;"></div>
+				<table border="1">
+					<tr>
+						<td valign="top">
+							<b>Plantronics Streaming API Log (newest first):</b>
+							<button id="clear_streamingapi_log">Clear</button>
+							<div id="streamingapilog"></div>
+						</td>
+					</tr>
+				</table>
+        	</div>
+        	<div style="margin-left: 620px;">
+        		<div id="chart_container" style="min-width: 310px; height: 600px; max-width: 600px;"></div>
+        	</div>
+        </div>
     </font>
 </body>
 <script>
